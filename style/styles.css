@@ -58,6 +58,9 @@ body {
 .dropdown-toggle:hover {
     color: var(--accent-blue);
 }
+.nav-left a:active{
+    color: var(--accent-blue);
+}
 
 .nav-icon {
     margin-right: 0.4rem;
@@ -120,6 +123,10 @@ body {
     color: var(--text-color);
     text-decoration: none;
     transition: background-color 0.3s ease;
+    margin-right: 0;
+}
+#networkSelect option:hover{
+    background: gray;
 }
 
 .dropdown-menu a:hover {
@@ -556,8 +563,9 @@ footer {
 
 /* Each form section styling */
 .form-container section {
+    /* background: rgb(99 164 158 / 5%); */
     background: rgb(29 255 235 / 5%);
-    /* background: #1e1e2f; */
+    
     padding: 1.5rem;
     border-radius: 8px;
     width: 400px;
@@ -585,13 +593,15 @@ footer {
 }
 
 .form-container form input {
-    width: 100%;
+    width: 96%;
     padding: 0.5rem;
     margin-top: 0.25rem;
-    border: 1px solid #444;
+    border: 1px solid #30363d;
+    /* border: 1px solid #444; */
     border-radius: 4px;
-    background: rgb(29 255 235 / 5%);
-    /* background: #2b2b40; */
+    background: rgb(99 164 158 / 5%);
+    /* background: rgb(29 255 235 / 5%); */
+  
     color: #fff;
 }
 
@@ -616,6 +626,12 @@ footer {
     box-shadow: 0 5px 15px rgba(0, 247, 255, 0.4);
 }
 
+#connectionInfo span{
+    background: rgb(29 255 235 / 5%);
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
 /* Responsive stacking on small screens */
 @media (max-width: 900px) {
     .form-container {

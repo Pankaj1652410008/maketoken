@@ -4,11 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <link rel="icon" type="image/x-icon" href="./img/favicon.png">
     <meta name="description" content="Understand gas fees for deploying tokens on Ethereum, BSC, and Polygon." />
     <meta name="keywords" content="Gas Fees, Blockchain, Ethereum, Binance Smart Chain, Polygon" />
     <meta name="author" content="FlashUSDTGen" />
     <title>Gas Fee Information - EVM Token Creator</title>
     <link rel="stylesheet" href="style/styles.css" />
+         <script src="https://use.fontawesome.com/d1b6a322cd.js"></script>
+    <script src="https://kit.fontawesome.com/1c05df5b07.js" crossorigin="anonymous"></script>
     <!-- Load Ethers.js -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
     <!-- Load your app.js *after* ethers -->
@@ -18,23 +21,26 @@
     <!-- Navigation -->
     <header>
         <nav class="navbar sticky-nav">
-               <div class="logo">
-                <h2 style="margin: 0; padding: 0; color: rgb(22, 245, 226);">MakeToken</h2>
+            <div class="logo">
+               <img src="./img/logo.png" alt="">
+                <!-- <h2 style="margin: 0; padding: 0; color: rgb(22, 245, 226);">MakeToken</h2> -->
             </div>
             <div class="nav-left">
-                <a href="index.html" class="nav-link">🏠 Home</a>
-                <a href="create.html" class="nav-link">➕ Create Token</a>
-                <a href="dashboard.html" class="nav-link">📊 Dashboard</a>
-                <a href="chains.html" class="nav-link">🌐 Chains Info</a>
+                <a href="index.html" class="nav-link"><i class="fa-solid fa-house"></i> Home</a>
+                <!-- <a href="index.html" class="nav-link">🏠 Home</a> -->
+                <a href="create.html" class="nav-link"><i class="fa-solid fa-plus"></i> Create Token</a>
+                <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+                <!-- <a href="dashboard.html" class="nav-link">📊 Dashboard</a> -->
+                <a href="chains.html" class="nav-link"><i class="fa-solid fa-globe"></i> Chains Info</a>
                 <div class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">📚 Docs ▾</a>
+                    <a href="#" class="nav-link dropdown-toggle active"><i class="fa-solid fa-file-invoice"></i> Docs ▾</a>
                     <div class="dropdown-menu">
                         <a href="token-standards.html">Token Standards</a>
                         <a href="gas-fee-info.html">Gas Fee Info</a>
                     </div>
                 </div>
                 <div class="dropdown">
-                    <a href="#" class="nav-link dropdown-toggle">❓ Help ▾</a>
+                    <a href="#" class="nav-link dropdown-toggle"><i class="fa-solid fa-question"></i> Help ▾</a>
                     <div class="dropdown-menu">
                         <a href="faq.html">FAQ</a>
                         <a href="contact-support.html">Contact Support</a>
