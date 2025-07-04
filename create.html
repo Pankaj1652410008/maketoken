@@ -75,14 +75,22 @@
             <section id="create-token-section">
                 <h2>Create ERC20 Token Only</h2>
                 <form id="create-token-form">
+                    <div>
                     <label>Name:</label>
                     <input type="text" id="tokenName" required />
+                    </div>
+                    <div>
                     <label>Symbol:</label>
                     <input type="text" id="tokenSymbol" required />
+                    </div>
+                    <div>
                     <label>Decimals:</label>
                     <input type="number" id="tokenDecimals" value="18" required />
+                    </div>
+                    <div>
                     <label>Initial Supply:</label>
                     <input type="number" id="tokenSupply" required />
+                    </div>
                     <button type="submit">Deploy Token</button>
                 </form>
             </section>
@@ -91,22 +99,38 @@
             <section id="create-ico-section">
                 <h2>Create ERC20 Token + ICO Crowdsale</h2>
                 <form id="create-ico-form">
+                    <div>
                     <label>Name:</label>
                     <input type="text" id="icoTokenName" required />
+                    </div>
+                    <div>
                     <label>Symbol:</label>
                     <input type="text" id="icoTokenSymbol" required />
+                    </div>
+                    <div>
                     <label>Decimals:</label>
                     <input type="number" id="icoTokenDecimals" value="18" required />
+                    </div>
+                    <div>
                     <label>Initial Supply:</label>
                     <input type="number" id="icoTokenSupply" required />
+                    </div>
+                    <div>
                     <label>Token USD Price ($):</label>
                     <input type="number" step="0.01" id="icoUsdPrice" required />
+                    </div>
+                    <div>
                     <label>Cap USD ($):</label>
                     <input type="number" step="0.01" id="icoUsdCap" required />
+                    </div>
+                    <div>
                     <label>Duration (days):</label>
                     <input type="number" id="icoDuration" required />
+                    </div>
+                    <div>
                     <label>Wallet to Collect Funds:</label>
                     <input type="text" id="icoWallet" required />
+                    </div>
                     <button type="submit">Deploy Token + ICO</button>
                 </form>
             </section>
