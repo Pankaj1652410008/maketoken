@@ -82,8 +82,8 @@ body {
     /* border: 1px solid var(--border-color); */
     color: #000;
     /* color: var(--text-color); */
-   padding: 0.6rem 0.6rem;
-    /* padding: 0.4rem 0.75rem; */
+   /* padding: 0.6rem 0.6rem; */
+    padding: 0.4rem 0.75rem;
     border-radius: 6px;
     font-size: 0.9rem;
     cursor: pointer;
