@@ -11,7 +11,8 @@
     <meta name="author" content="FlashUSDTGen" />
     <title>EVM Token Creator</title>
     <link rel="stylesheet" href="style/styles.css" />
-     <script src="https://use.fontawesome.com/d1b6a322cd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/d1b6a322cd.js"></script>
     <script src="https://kit.fontawesome.com/1c05df5b07.js" crossorigin="anonymous"></script>
     <!-- Load Ethers.js -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
@@ -24,10 +25,13 @@
     <header>
         <nav class="navbar sticky-nav">
             <div class="logo">
-               <img src="./img/logo.png" alt="">
+                <img src="./img/logo.png" alt="">
                 <!-- <h2 style="margin: 0; padding: 0; color: rgb(22, 245, 226);">MakeToken</h2> -->
             </div>
-            <div class="nav-left">
+            <div class="hamburger_menu" style="color: white;display: none;">
+                <i onclick="openNav()" style="cursor: pointer; font-size: 1.5rem;" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-left nav-left-res">
                 <a href="index.html" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
                 <!-- <a href="index.html" class="nav-link">🏠 Home</a> -->
                 <a href="create.html" class="nav-link"><i class="fa-solid fa-plus"></i> Create Token</a>
@@ -58,7 +62,7 @@
                     <option value="0x5">Goerli</option>
                     <option value="0x13881">Mumbai</option>
                 </select>
-                <button id="connectButton">Connect Wallet</button>
+                <button id="connectButton" class="connect_wallet">Connect Wallet</button>
             </div>
         </nav>
 
@@ -67,6 +71,43 @@
             <span id="networkDisplay">Network: -</span>
         </div> -->
     </header>
+    <!-- mobile naviagtion -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <div class="nav-left">
+            <a href="index.html" class="nav-link active"><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+            <!-- <a href="index.html" class="nav-link">🏠 Home</a> -->
+            <a href="create.html" class="nav-link"><i class="fa-solid fa-plus" aria-hidden="true"></i> Create Token</a>
+            <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+                Dashboard</a>
+            <!-- <a href="dashboard.html" class="nav-link">📊 Dashboard</a> -->
+            <a href="chains.html" class="nav-link"><i class="fa-solid fa-globe" aria-hidden="true"></i> Chains Info</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle"><i class="fa-solid fa-file-invoice" aria-hidden="true"></i>
+                    Docs ▾</a>
+                <div class="dropdown-menu" style="    left: 32px;background-color: rgb(15 25 24);">
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="token-standards.html">Token Standards</a>
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="gas-fee-info.html">Gas Fee Info</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle"><i class="fa-solid fa-question" aria-hidden="true"></i>
+                    Help ▾</a>
+                <div class="dropdown-menu" style="    left: 32px;background-color: rgb(15 25 24);">
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="faq.html">FAQ</a>
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="contact-support.html">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     <!-- Hero Section -->
     <section class="hero welcome_hero">
@@ -83,18 +124,31 @@
         <div class="card-container homecard">
             <div class="card">
                 <h3>Instant Token Creation</h3>
-                <p>Create your own cryptocurrency in minutes with our Instant Token Creation tool. No coding required — simply enter your token name, symbol, supply, and deploy instantly on Ethereum, Binance Smart Chain, Polygon, and other EVM-compatible networks. Perfect for DeFi projects, utility tokens, airdrops, or testing ideas. Launch a secure, customizable ERC-20 token in just a few clicks using your Web3 wallet. Fast, easy, and blockchain-ready.</p>
+                <p>Create your own cryptocurrency in minutes with our Instant Token Creation tool. No coding required —
+                    simply enter your token name, symbol, supply, and deploy instantly on Ethereum, Binance Smart Chain,
+                    Polygon, and other EVM-compatible networks. Perfect for DeFi projects, utility tokens, airdrops, or
+                    testing ideas. Launch a secure, customizable ERC-20 token in just a few clicks using your Web3
+                    wallet. Fast, easy, and blockchain-ready.</p>
                 <!-- <p>Launch a fully functional ERC20 token with custom settings in seconds.</p> -->
             </div>
             <div class="card">
                 <h3>Multi-Chain Support</h3>
-                <p>Our platform offers powerful Multi-Chain Support, allowing you to create and manage tokens across popular EVM-compatible blockchains like Ethereum, Binance Smart Chain (BSC), Polygon, Avalanche, and more. Deploy your tokens on the network of your choice with a single interface — no need to switch tools or rewrite code. Enjoy faster transactions, lower fees, and seamless cross-chain compatibility for maximum reach and flexibility.</p>
+                <p>Our platform offers powerful Multi-Chain Support, allowing you to create and manage tokens across
+                    popular EVM-compatible blockchains like Ethereum, Binance Smart Chain (BSC), Polygon, Avalanche, and
+                    more. Deploy your tokens on the network of your choice with a single interface — no need to switch
+                    tools or rewrite code. Enjoy faster transactions, lower fees, and seamless cross-chain compatibility
+                    for maximum reach and flexibility.</p>
                 <!-- <p>Deploy tokens on Ethereum, Binance Smart Chain, Polygon, and testnets.</p> -->
             </div>
             <div class="card">
                 <h3>Security First</h3>
                 <!-- <p>Contracts are securely verified and follow best Solidity practices.</p> -->
-                 <p>At the core of our platform is a Security-First approach to EVM token creation. All tokens are built using audited smart contract templates, ensuring safe, reliable, and transparent deployment across Ethereum, BSC, Polygon, and other EVM-compatible networks. Your token code is immutable once deployed, preventing unauthorized changes. Optional features like contract ownership renouncement, liquidity locking, and anti-bot mechanisms give you full control and peace of mind. Protect your project — and your users — from day one.</p>
+                <p>At the core of our platform is a Security-First approach to EVM token creation. All tokens are built
+                    using audited smart contract templates, ensuring safe, reliable, and transparent deployment across
+                    Ethereum, BSC, Polygon, and other EVM-compatible networks. Your token code is immutable once
+                    deployed, preventing unauthorized changes. Optional features like contract ownership renouncement,
+                    liquidity locking, and anti-bot mechanisms give you full control and peace of mind. Protect your
+                    project — and your users — from day one.</p>
             </div>
         </div>
     </section>
@@ -107,11 +161,24 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        &copy; 2025 FlashUSDTGen — Deploy your token across any EVM chain
+     <footer>
+        <div class="ftr">
+
+            &copy; 2025 FlashUSDTGen — ERC20 Documentation
+        </div>
+        <div class="privacy_terms">
+                <a href="./privacy-policy.html">Privacy and Policy</a>
+                <hr style="    border: 1px;
+                color: rgb(107 114 128 / 1);
+                opacity: 0.8;
+                border-style: solid;
+                height: 50%;">
+                <a href="./terms&condition.html">Terms &amp; Condition</a>
+            </div>
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
