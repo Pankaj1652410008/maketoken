@@ -4,13 +4,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-       <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
     <meta name="description" content="Frequently asked questions about creating tokens on EVM chains." />
     <meta name="keywords" content="FAQ, Help, Token Creation, EVM Chains" />
     <meta name="author" content="FlashUSDTGen" />
     <title>FAQ - EVM Token Creator</title>
     <link rel="stylesheet" href="style/styles.css" />
-         <script src="https://use.fontawesome.com/d1b6a322cd.js"></script>
+    <script src="https://use.fontawesome.com/d1b6a322cd.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/1c05df5b07.js" crossorigin="anonymous"></script>
     <!-- Load Ethers.js -->
     <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
@@ -18,11 +19,11 @@
 </head>
 
 <body>
- <!-- Navigation -->
+    <!-- Navigation -->
     <header>
         <nav class="navbar sticky-nav">
             <div class="logo">
-               <img src="./img/logo.png" alt="">
+                <img src="./img/logo.png" alt="">
                 <!-- <h2 style="margin: 0; padding: 0; color: rgb(22, 245, 226);">MakeToken</h2> -->
             </div>
             <div class="nav-left">
@@ -76,57 +77,135 @@
 
     <!-- Content -->
     <section class="section">
-        <h2>Frequently Asked Questions</h2>
-        <ul>
+        <h2 style="text-align: center;">Frequently Asked Questions</h2>
+        <!-- <ul>
             <li><strong>Do I need coding experience?</strong> No, everything is automated.</li>
             <li><strong>Can I test deployments?</strong> Yes, use Goerli or Mumbai testnets.</li>
             <li><strong>How long does deployment take?</strong> Usually under 2 minutes.</li>
             <li><strong>How are fees calculated?</strong> Fees depend on network gas prices.</li>
-        </ul>
+        </ul> -->
 
-        <h2>1. What is EVM Token Creator?</h2>
-        <p>EVM Token Creator is an online platform that lets you instantly create and deploy custom tokens on EVM-compatible blockchains like Ethereum, BSC (Binance Smart Chain), Polygon, Avalanche, and more — no coding required.</p>
-    
-         <h2>2. What types of tokens can I create?</h2>
-         <p>You can create <strong>ERC-20</strong>and <strong>BEP-20</strong> standard tokens with optional features like minting, burning, pausing, blacklisting, and ownership control.</p>
-    
-         <h2>3. Do I need coding skills to use this platform?</h2>
-         <p>No! Our platform is fully no-code. You only need to fill out your token details and click deploy — we handle the technical part.</p>
+        <div class="accordion">
+            <div class="at-item">
+                <div class="at-title active">
+                    <h2>1. What is EVM Token Creator?</h2>
+                </div>
+                <div class="at-tab" style="display: block;">
+                    EVM Token Creator is an online platform that lets you instantly create and deploy custom tokens on
+                    EVM-compatible blockchains like Ethereum, BSC (Binance Smart Chain), Polygon, Avalanche, and more —
+                    no coding required.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>2. What types of tokens can I create?</h2>
+                </div>
+                <div class="at-tab">
+                    You can create <strong>ERC-20</strong>and <strong>BEP-20</strong> standard tokens with optional
+                    features like minting, burning, pausing, blacklisting, and ownership control.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>3. Do I need coding skills to use this platform?</h2>
+                </div>
+                <div class="at-tab">
+                    No! Our platform is fully no-code. You only need to fill out your token details and click deploy —
+                    we handle the technical part.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>4. Is it safe to use EVM Token Creator?</h2>
+                </div>
+                <div class="at-tab">
+                    Yes, we use <strong> secure and audited smart contract libraries </strong> (like OpenZeppelin) to
+                    ensure maximum safety and transparency in every deployment.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>5. Can I test my token before going live?</h2>
+                </div>
+                <div class="at-tab">
+                    Absolutely. You can deploy tokens to popular testnets such as <strong> Goerli, Mumbai,</strong> or
+                    <Strong>BSC</strong> Testnet to test all functionality before launching on a live network.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>6. Which blockchains are supported?</h2>
+                </div>
+                <div class="at-tab">
+                    We currently support major EVM-compatible chains, including:
+                    <ul>
+                        <li>Ethereum (Mainnet & Goerli)</li>
+                        <li>Binance Smart Chain (Mainnet & Testnet)</li>
+                        <li>Polygon (Mainnet & Mumbai)</li>
+                        <li>Avalanche</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>7. Can I customize my token name, symbol, and supply?</h2>
+                </div>
+                <div class="at-tab">
+                    Yes. You can fully customize your token’s <strong>name, symbol, initial supply, decimal
+                        places,</strong> and even <strong>advanced</strong> settings.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                    <h2>8. How long does it take to deploy a token?</h2>
+                </div>
+                <div class="at-tab">
+                    You can create and deploy your token in <strong>less than 5 minutes</strong>, provided you have a
+                    connected wallet and sufficient gas fees.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                   <h2>9. What wallet do I need to use this platform?</h2>
+                </div>
+                <div class="at-tab">
+                   You’ll need a <strong>Web3 wallet</strong> like <strong>MetaMask, Trust Wallet,</strong> or any other wallet
+            that supports EVM networks and browser dApps.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                   <h2>10. Can I edit the token after deployment?</h2>
+                </div>
+                <div class="at-tab">
+                 No. Once deployed, the token contract is permanent on the blockchain. However, if you enable <strong>minting,
+                pausing, or burning,</strong> you can interact with those functions as the owner.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                   <h2>11. Do you offer white-label or reseller options?</h2>
+                </div>
+                <div class="at-tab">
+                Yes! We offer <strong>white-label solutions</strong> for agencies, startups, and entrepreneurs who want to
+            offer token creation services under their own brand.
+                </div>
+            </div>
+            <div class="at-item">
+                <div class="at-title">
+                   <h2>12. What are the fees involved?</h2>
+                </div>
+                <div class="at-tab">
+               Fees depend on the blockchain selected (based on gas costs) and optional advanced features. Some testnet
+            deployments are free. Check our <strong>pricing page</strong> for more details.
+                </div>
+            </div>
+        </div>
 
-         <h2>4. Is it safe to use EVM Token Creator?</h2>
-         <p>Yes, we use <strong> secure and audited smart contract libraries </strong> (like OpenZeppelin) to ensure maximum safety and transparency in every deployment.</p>
-         
-         <h2>5. Can I test my token before going live?</h2>
-         <p>Absolutely. You can deploy tokens to popular testnets such as <strong> Goerli, Mumbai,</strong> or <Strong>BSC</strong> Testnet to test all functionality before launching on a live network.</p>
-    
-            <h2>6. Which blockchains are supported?</h2>
-            <p>We currently support major EVM-compatible chains, including:</p>
-            <ul>
-                <li>Ethereum (Mainnet & Goerli)</li>
-                <li>Binance Smart Chain (Mainnet & Testnet)</li>
-                <li>Polygon (Mainnet & Mumbai)</li>
-                <li>Avalanche</li>
-            </ul>
 
-            <h2>7. Can I customize my token name, symbol, and supply?</h2>
-            <p>Yes. You can fully customize your token’s <strong>name, symbol, initial supply, decimal places,</strong> and even <strong>advanced</strong> settings.</p>
-
-            <h2>8. How long does it take to deploy a token?</h2>
-            <p>You can create and deploy your token in <strong>less than 5 minutes</strong>, provided you have a connected wallet and sufficient gas fees.</p>
-
-            <h2>9. What wallet do I need to use this platform?</h2>
-            <p>You’ll need a <strong>Web3 wallet</strong> like <strong>MetaMask, Trust Wallet,</strong> or any other wallet that supports EVM networks and browser dApps.</p>
-            
-              <h2>10. Can I edit the token after deployment?</h2>
-              <p>No. Once deployed, the token contract is permanent on the blockchain. However, if you enable <strong>minting, pausing, or burning,</strong> you can interact with those functions as the owner.</p>
-              
-              <h2>11. Do you offer white-label or reseller options?</h2>
-              <p>Yes! We offer <strong>white-label solutions</strong> for agencies, startups, and entrepreneurs who want to offer token creation services under their own brand.</p>
-     
-              <h2>12. What are the fees involved?</h2>
-              <p>Fees depend on the blockchain selected (based on gas costs) and optional advanced features. Some testnet deployments are free. Check our <strong>pricing page</strong> for more details.</p>
-    
-        </section>
+       
+      
+    </section>
 
     <div id="successModal" class="modal-overlay" style="display:none;">
         <div class="modal-content">
@@ -140,6 +219,7 @@
     </footer>
 
     <script src="js/app.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
