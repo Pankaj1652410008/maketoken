@@ -241,9 +241,9 @@ body {
     outline: none;
 }
 
-.button:hover {
+/* .button:hover {
     background-color: #1f6feb;
-}
+} */
 
 /* FORMS */
 form {
@@ -796,6 +796,15 @@ background-color: rgb(29 255 235 / 5%);
     flex-direction: column;
     align-items: start;
     flex-wrap: nowrap !important;
+}
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, #1a1a2e, darken(#1a1a2e, 5%));
 }
 
 /* @media screen and (max-height: 450px) {
