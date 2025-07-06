@@ -463,6 +463,20 @@ footer {
     opacity: 0.1;
     z-index: -1;
 }
+.about-ico::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/bg_10.jpg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    /* background-size: 100% 100%; */
+    opacity: 0.1;
+    z-index: -1;
+}
 .logo{
     width: 150px;
 }
@@ -840,10 +854,74 @@ background-color: rgb(29 255 235 / 5%);
 height: 100%;
 }
 
+.oricodev{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+}
+.icodevitem{
+    display: flex;
+    align-items: center;
+    width: 30.333%;
+    margin-bottom: 21px;
+    background-color: #000;
+    border-radius: 15px;
+    color: white;
+    padding: 10px;
+    box-shadow: 0 0 41px 0 rgb(9 208 198 / 10%);
+}
+.iconimg_text h4{
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 16px;
+  
+}
+.img-icoimg {
+    width: 50px;
+    height: 50px;
+}
+.img-icoimg img{
+   width: 100%; 
+}
 /* @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 } */
+   @media only screen and (max-width: 900px) {
+.whatcrowd{
+    flex-direction: column;
+}
+ .whatcrowd .right_img {
+  
+    width: 100%;
+}
+.whatcrowd .left_content{
+   width: 100%;
+}
+   }
+
+  @media only screen and (max-width: 1100px) {
+    .whatcrowd .right_img {
+  
+    height: inherit;
+}
+.whatcrowd .left_content{
+    height: inherit;
+}
+  }
+ @media only screen and (max-width: 768px) {
+    .icodevitem {
+        width: 49.33%;
+    }
+}
+@media only screen and (max-width: 550px) {
+    .icodevitem {
+        width: 100% !important;
+    }
+}
  @media only screen and (max-width:600px){
 footer{
     flex-direction: column;
