@@ -69,14 +69,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 "type": "circle",
                 "stroke": {
                     "width": 0,
-                    "color": "#000000"
+                    "color": "#fff"
                 },
                 "polygon": {
                     "nb_sides": 5
                 }
             },
             "opacity": {
-                "value": 0.5,
+                "value": 0.3,
                 "random": true,
                 "anim": {
                     "enable": true,
@@ -98,7 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
             "line_linked": {
                 "enable": true,
                 "distance": 150,
-                "color": "#4e54c8",
+                "color": "#fff",
+                // "color": "#4e54c8",
                 "opacity": 0.4,
                 "width": 1
             },
