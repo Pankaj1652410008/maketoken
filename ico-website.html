@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.png">
+    <title>ICO Crowd – The Pulse of the Crypto Revolution</title>
+    <link rel="stylesheet" href="style/styles.css" />
+    <script src="https://use.fontawesome.com/d1b6a322cd.js"></script>
+    <script src="https://kit.fontawesome.com/1c05df5b07.js" crossorigin="anonymous"></script>
+    <!-- Load Ethers.js -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <!-- Load your app.js *after* ethers -->
+</head>
+
+<body style="background: #000;">
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar sticky-nav">
+            <div class="logo">
+                <img src="./img/logo.png" alt="">
+                <!-- <h2 style="margin: 0; padding: 0; color: rgb(22, 245, 226);">MakeToken</h2> -->
+            </div>
+            <div class="hamburger_menu" style="color: white;display: none;">
+                <i onclick="openNav()" style="cursor: pointer; font-size: 1.5rem;" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="nav-left nav-left-res">
+                <a href="index.html" class="nav-link "><i class="fa-solid fa-house"></i> Home</a>
+                <!-- <a href="index.html" class="nav-link">🏠 Home</a> -->
+                <a href="create.html" class="nav-link"><i class="fa-solid fa-plus"></i> Create Token</a>
+                <a href="./ico-website.html" class="nav-link active"><i class="fa-solid fa-layer-group"></i> ICO
+                    website</a>
+                <!-- <a href="create.html" class="nav-link"><i class="fa-solid fa-gear"></i> ICO website</a> -->
+                <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-table-columns"></i> Dashboard</a>
+                <!-- <a href="dashboard.html" class="nav-link">📊 Dashboard</a> -->
+                <a href="chains.html" class="nav-link"><i class="fa-solid fa-globe"></i> Chains Info</a>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle "><i class="fa-solid fa-file-invoice"></i> Docs ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="token-standards.html">Token Standards</a>
+                        <a href="gas-fee-info.html">Gas Fee Info</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle"><i class="fa-solid fa-question"></i> Help ▾</a>
+                    <div class="dropdown-menu">
+                        <a href="faq.html">FAQ</a>
+                        <a href="contact-support.html">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <select id="networkSelect">
+                    <option value="">Select Network</option>
+                    <option value="0x1">Ethereum</option>
+                    <option value="0x38">BSC</option>
+                    <option value="0x89">Polygon</option>
+                    <option value="0x5">Goerli</option>
+                    <option value="0x13881">Mumbai</option>
+                </select>
+                <button id="connectButton">Connect Wallet</button>
+            </div>
+        </nav>
+
+        <!-- <div id="connectionInfo" style="color:#ccc; margin-top: 1rem;">
+            <span id="accountDisplay">Account: -</span><br>
+            <span id="networkDisplay">Network: -</span>
+        </div> -->
+    </header>
+    <!-- mobile naviagtion -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <div class="nav-left">
+            <a href="index.html" class="nav-link "><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a>
+            <!-- <a href="index.html" class="nav-link">🏠 Home</a> -->
+            <a href="create.html" class="nav-link"><i class="fa-solid fa-plus" aria-hidden="true"></i> Create Token</a>
+            <a href="./ico-website.html" class="nav-link active"><i class="fa-solid fa-layer-group"></i> ICO website</a>
+            <a href="dashboard.html" class="nav-link"><i class="fa-solid fa-table-columns" aria-hidden="true"></i>
+                Dashboard</a>
+            <!-- <a href="dashboard.html" class="nav-link">📊 Dashboard</a> -->
+            <a href="chains.html" class="nav-link"><i class="fa-solid fa-globe" aria-hidden="true"></i> Chains Info</a>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle "><i class="fa-solid fa-file-invoice"
+                        aria-hidden="true"></i>
+                    Docs ▾</a>
+                <div class="dropdown-menu" style="    left: 32px;background-color: rgb(15 25 24);">
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="token-standards.html">Token Standards</a>
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="gas-fee-info.html">Gas Fee Info</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle"><i class="fa-solid fa-question" aria-hidden="true"></i>
+                    Help ▾</a>
+                <div class="dropdown-menu" style="    left: 32px;background-color: rgb(15 25 24);">
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="faq.html">FAQ</a>
+                    <a style="    margin: 0;
+    padding: 0.5rem 1rem;" href="contact-support.html">Contact Support</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="hero ico " style="background-color: rgb(13 139 128 / 5%); position: relative;">
+        <!-- <div id="particles-js"></div> -->
+        <div class="hero-content">
+            <h1>ICO Crowdsale Development Services – Launch Your Tokenized Future</h1>
+            <p><strong>Build, Launch, and Manage Your ICO Crowdsale With Confidence</strong></p>
+            <p>Create, promote, and manage your ICO token effortlessly on Ethereum, BNB Chain, Polygon & more.</p>
+            <!-- <a href="https://wa.me/8585909005" class="button">Connect Us</a> -->
+        </div>
+    </section>
+    <section class="section welocome_ico">
+        <h2 style="text-align: center; border: none;">What is ICO Crowdsale Development</h2>
+        <div class="whatcrowd">
+            <div class="left_content">
+                <p><strong>ICO Crowdsale Development</strong> is the process of building a secure, transparent, and
+                    fully functional platform that allows blockchain projects to raise funds by selling digital tokens
+                    to investors.</p>
+                <p>An <strong>ICO (Initial Coin Offering)</strong> is a popular fundraising method used by startups and
+                    crypto projects. Through a crowdsale, investors buy tokens in exchange for cryptocurrencies like
+                    ETH, BNB, or USDT. These tokens may later be used on the platform or traded on exchanges.</p>
+                <p>ICO crowdsale development includes everything needed to launch a successful token sale — from
+                    <strong>smart contract creation, token generation, and ICO website development to dashboard setup,
+                        payment gateway integration, and KYC/AML compliance.</strong></p>
+                <p>If you're planning to launch a blockchain-based project, understanding ICO crowdsale development is
+                    crucial for building trust, raising funds, and gaining early traction in the market.</p>
+            </div>
+            <div class="right_img icofs-1">
+                <img src="./img/ico-development.webp" alt="">
+                <!-- <img src="./img/what-ico.svg" alt=""> -->
+            </div>
+        </div>
+    </section>
+    <section class="section" style="background: #000100;">
+        <h2 style="text-align: center; border: none; margin-bottom: 5px;"> Our ICO Crowdsale Development Services</h2>
+        <p style="    text-align: center;margin-top: 0px; margin-bottom: 60px;">We offer complete solutions tailored to
+            your project goals:</p>
+        <div class="card-container chaincard">
+            <div class="card">
+                <h3>Token Development</h3>
+                <p>We create secure and standard-compliant tokens (ERC-20, BEP-20, Polygon, etc.) ready for listing and
+                    utility within your ecosystem.</p>
+            </div>
+            <div class="card">
+                <h3>Smart Contract Development</h3>
+                <p>Fully audited, transparent, and automated smart contracts to handle token sales, vesting, bonuses,
+                    and fund distribution.</p>
+            </div>
+            <div class="card">
+                <h3>ICO Dashboard Design</h3>
+                <p>Custom-built investor dashboards for real-time token purchases, KYC/AML integration, referral
+                    tracking, and wallet connectivity.</p>
+            </div>
+            <div class="card">
+                <h3>ICO Website Development</h3>
+                <p>Beautifully designed, responsive, and SEO-optimized websites with investor trust-building tools,
+                    whitepaper access, and countdown timers.</p>
+            </div>
+            <div class="card">
+                <h3>KYC/AML Integration</h3>
+                <p>Build investor confidence and regulatory compliance with secure and automated KYC/AML verification
+                    modules.</p>
+            </div>
+            <div class="card">
+                <h3>Wallet & Payment Gateway Integration</h3>
+                <p>Allow participants to purchase tokens using ETH, BNB, USDT, BTC, or custom gateways.</p>
+            </div>
+            <div class="card">
+                <h3>Token Generator</h3>
+                <p>Create your own ERC20/BEP20 token instantly with our no-code tool. Customize supply, name, symbol,
+                    and features like burn, mint, fees, and anti-bot.</p>
+            </div>
+            <div class="card">
+                <h3>ICO Launchpad</h3>
+                <p>Easily launch and promote your ICO or presale campaign. Reach global investors with our optimized
+                    listing and marketing tools.</p>
+            </div>
+
+        </div>
+         <div class="c_us_btn minbt" style="text-align: center; margin-top: 40px;">
+                <a href="https://wa.me/8585909005" target="_blank">Connect On Whatsapp</a>
+                <a href="/">Connect On Telegram</a>
+            </div>
+    </section>
+    <section class="section welocome_ico">
+        <h2 style="text-align: center; border: none;">General outline of the process ICO Development</h2>
+        <div class="whatcrowd">
+            <div class="left_content">
+                <h2 style="border: none;color: rgb(22, 245, 226);">How to launch an ICO on Ethereum?</h2>
+                <p>Launching an ICO on Ethereum requires careful planning, technical expertise, and compliance with
+                    legal and regulatory frameworks. It is recommended to consult with blockchain experts and legal
+                    professionals to ensure a smooth and compliant ICO launch</p>
+                <ul>
+                    <li>Optimizes the usage of accounts and makes transactions efficient</li>
+                    <li>Provides unparalleled speed and efficiency of transactions</li>
+                    <li>Enables fluid transactions even when the traffic is high</li>
+                    <li>ERC20 tokens are compatible with any wallet that uses the same standard</li>
+                </ul>
+                <p>Create your ERC-20 or ERC-721 token contract. ERC-20 is the most common token standard for fungible
+                    tokens, while ERC-721 is used for non-fungible tokens (NFTs). You can write the smart contract code
+                    yourself or seek the assistance of a developer or ICO development service provider.</p>
+            </div>
+            <div class="right_img icofs-1">
+                <img src="./img/ico-development-2.webp" alt="">
+                <!-- <img src="./img/ethsection.png" alt=""> -->
+            </div>
+        </div>
+    </section>
+       <section class="section" style="background: #000100;">
+        <h2 style="text-align: center; border: none; margin-bottom: 5px;"> Our ICO Development Solutions</h2>  
+        <div class="oricodev">
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/white-paper-creation.png" alt="White paper creation">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>White paper creation and design</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/light-paper.png" alt="Light paper creation">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>Light paper creation and design</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/landing-page-design.webp" alt="Landing page design">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>Landing page design</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/ico-dev.png" alt="ICO fundraising dashboard">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>ICO fundraising dashboard</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/tokencoin-dev.webp" alt="coin development">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>Token or coin development</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/nft-market.webp" alt="NFT Marketplaces">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>NFT Marketplaces</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/dao.png" alt="release">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>DAO Launches</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/multichain.png" alt="ICO Multichain">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>Multi-channel marketing</h4>
+                    </div>
+                </div>
+                <div class="icodevitem">
+                    <div class="img-icoimg">
+                        <img src="./img/listing.jpg" alt="ICO services">
+                    </div>
+                    <div class="iconimg_text">
+                        <h4>Listing services</h4>
+                    </div>
+                </div>
+            </div>  
+    </section>
+  
+    <section class="section about-ico" style="position: relative;">
+        <h1>About ICO Crowdsel</h1>
+        <p><strong>ICO Crowd</strong> is a dedicated platform for Initial Coin Offerings (ICOs), blockchain projects,
+            DeFi, and Web3 innovation. Our mission is to connect visionary blockchain startups with early investors
+            through transparent listings, expert analysis, and a strong crypto community.</p>
+        <p>We believe in the power of decentralization and work to empower both project creators and crypto investors
+            through information, trust, and innovation.</p>
+
+        <p>These Terms and Conditions ("Terms") govern your use of the EVM Token Creator website and services. By
+            accessing or using our platform, you agree to comply with and be bound by these Terms.</p>
+
+            <p>Trust BlockchainX for a customized ICO approach.</p>
+            <div class="join_team">
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                     <span>Proficient and experienced team</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                      <span>7+ years of experience</span>
+                </div>
+                
+            </div>
+            <div class="join_team">
+              <div>
+                    <i class="fa-solid fa-check"></i>
+                    <span>On-time delivery</span>
+                </div>
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                     <span>24/7 support</span>
+                </div>
+                
+            </div>
+            <div class="c_us_btn">
+                <a href="https://wa.me/8585909005" target="_blank">Connect with us</a>
+            </div>
+
+
+
+    </section>
+
+    <div id="successModal" class="modal-overlay" style="display:none;">
+        <div class="modal-content">
+            <span id="successModalMessage"></span>
+            <button id="successModalClose">Close</button>
+        </div>
+    </div>
+    <footer>
+        <div class="ftr">
+
+            &copy; 2025 FlashUSDTGen — ERC20 Documentation
+        </div>
+        <div class="privacy_terms">
+            <a href="./privacy-policy.html">Privacy and Policy</a>
+            <hr style="    border: 1px;
+                color: rgb(107 114 128 / 1);
+                opacity: 0.8;
+                border-style: solid;
+                height: 50%;">
+            <a href="./terms&condition.html">Terms &amp; Condition</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
