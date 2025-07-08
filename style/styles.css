@@ -884,7 +884,7 @@ height: 100%;
     border-radius: 15px;
     color: white;
     padding: 10px;
-    box-shadow: 0 0 41px 0 rgb(9 208 198 / 10%);
+    box-shadow: 0 0 41px 0 rgb(9 208 198 / 13%);
 }
 .iconimg_text h4{
     font-size: 16px;
@@ -969,6 +969,7 @@ height: 100%;
      .erc_token_box {
     grid-template-columns: repeat(1, 1fr) !important;
     }
+    
 
 }
 
@@ -1053,17 +1054,17 @@ height: 100%;
     z-index: -1;
 }
 .welocome_ico{
-        width: 95%;
+        /* width: 95%; */
     background: #1dffeb0d;
-    margin: auto;
+    margin:0 20px;
     border: 1px solid rgba(0, 247, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 247, 255, 0.5), inset 0 0 10px rgba(0, 247, 255, 0.3);
     margin-top: 40px;
 }
 .about-ico{
-        width: 95%;
+        /* width: 95%; */
     background: #1dffeb0d;
-    margin: auto;
+    margin: 0 20px;
     /* border: 1px solid rgba(0, 247, 255, 0.3);
     box-shadow: 0 0 10px rgba(0, 247, 255, 0.5), inset 0 0 10px rgba(0, 247, 255, 0.3); */
     margin-top: 40px;
@@ -1129,5 +1130,8 @@ height: 100%;
 }
 .minbt a{
         width: 60%;
+}
+.join_team{
+    flex-direction: column;
 }
 }
