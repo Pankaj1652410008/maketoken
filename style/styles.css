@@ -1135,3 +1135,65 @@ height: 100%;
     flex-direction: column;
 }
 }
+.fee_contact ul li a{
+background-color: rgb(29 255 235 / 5%);
+    color: black;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: all 0.4s;
+    margin: auto;
+    text-decoration: none;
+    color: white;
+}
+.fee_contact ul li a:hover{
+     box-shadow: 0 0 10px rgba(0, 247, 255, 0.5), inset 0 0 10px rgba(0, 247, 255, 0.3);
+}
+.fee_contact{
+     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+.fee_contact div{
+    display: flex; gap: 8px;
+}
+.fee_contact ul{
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    gap: 8px;
+  
+}
+/* .fee_contact p,.fee_contact ul{
+    margin-top: 0;
+    margin-bottom: 0;
+} */
+ @media only screen and (max-width:801px){
+    .fee_contact{
+        flex-direction: column;
+    }
+    .fee_contact div{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+     .fee_contact p{
+        margin-bottom: 3px;
+         font-size: 14px;
+     }
+    .fee_contact div p{
+        margin-top: 0;
+        margin-bottom: 3px;
+        text-align: center;
+    }
+    .fee_contact ul{
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+ }
